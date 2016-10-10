@@ -42,16 +42,19 @@
 # (To distribute this file outside of CMake, substitute the full
 #  License text for the above reference.)
 
+file(GLOB Intl_LIB_SEARCH_PATHS "/usr/local/Cellar/gettext/*/lib")
+file(GLOB Intl_INC_SEARCH_PATHS "/usr/local/Cellar/gettext/*/include")
+
 # Find include directory
 find_path(Intl_INCLUDE_DIR
           NAMES "libintl.h"
-	  HINTS "/usr/local/Cellar/gettext/0.19.8.1/include/"
+  	  PATHS ${Intl_INC_SEARCH_PATHS}
           DOC "libintl include directory")
 mark_as_advanced(Intl_INCLUDE_DIR)
 
 # Find all Intl libraries
 find_library(Intl_LIBRARY "intl"
-  HINTS "/usr/local/Cellar/gettext/0.19.8.1/lib/"
+  PATHS ${Intl_LIB_SEARCH_PATHS}
   DOC "libintl libraries (if not in the C library)")
 mark_as_advanced(Intl_LIBRARY)
 

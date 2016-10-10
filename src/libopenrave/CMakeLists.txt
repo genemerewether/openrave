@@ -17,6 +17,8 @@ endif()
 
 link_directories(${OPENRAVE_LINK_DIRS} ${FPARSER_LIBRARY_DIRS})
 
+include_directories(${Intl_INCLUDE_DIR})
+
 include_directories(${FPARSER_INCLUDE_DIRS})
 add_library(libopenrave SHARED ${openrave_lib_SOURCES})
 add_dependencies(libopenrave interfacehashes_target openrave-md5)
