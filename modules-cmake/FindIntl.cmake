@@ -45,11 +45,13 @@
 # Find include directory
 find_path(Intl_INCLUDE_DIR
           NAMES "libintl.h"
+	  HINTS "/usr/local/Cellar/gettext/0.19.8.1/include/"
           DOC "libintl include directory")
 mark_as_advanced(Intl_INCLUDE_DIR)
 
 # Find all Intl libraries
 find_library(Intl_LIBRARY "intl"
+  HINTS "/usr/local/Cellar/gettext/0.19.8.1/lib/"
   DOC "libintl libraries (if not in the C library)")
 mark_as_advanced(Intl_LIBRARY)
 

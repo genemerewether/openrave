@@ -2,9 +2,9 @@
 # logging openrave plugin
 ###########################################
 set(logging_SOURCES logging.cpp plugindefs.h)
-set(ENABLE_VIDEORECORDING)
+#set(ENABLE_VIDEORECORDING)
 
-if( OPT_VIDEORECORDING )
+if(0)# OPT_VIDEORECORDING )
   pkg_check_modules(FFMPEG libavformat libavcodec)
   if (NOT MSVC AND FFMPEG_FOUND)
     message(STATUS "enabling FFMPEG support")

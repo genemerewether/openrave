@@ -29,7 +29,7 @@
 #include <Moby/SphericalJoint.h>
 #include <Moby/GravityForce.h>
 
-typedef void (*ControllerCallbackFn)(boost::shared_ptr<Moby::DynamicBody>,double,void*);
+typedef void (*ControllerCallbackFn)(boost::shared_ptr<Moby::ControlledBodyPtr>,double,void*);
 
 // manages a space of Moby objects
 class MobySpace : public boost::enable_shared_from_this<MobySpace>
@@ -621,7 +621,7 @@ private:
     // the callback controller function.  
     // Moby requires that controls be applied inside a callback
     // this function ensures openrave is able to update controls
-    void _Controller( Moby::DynamicBodyPtr db, const double& t, void* ) {
+    void _Controller( Moby::ControlledBodyPtr db, const double& t, void* ) {
 
         // input buffer for controls and state
         // output buffer for state?
